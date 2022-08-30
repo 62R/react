@@ -1,17 +1,13 @@
+import { DebtorItem } from "../DebtorsItem/DebtorItem";
+
 export const DebtorsList = ({ debtorsArr, setDebtorsArr }) => {
     const deleteDebt = (evt) => {
         setDebtorsArr((prevList) =>
-            [...prevList.slice(0, evt.target.dataset.idx), ...prevList.slice(evt.target.dataset.idx + 1)]
-        );
-    }
-    const renderItem = (item, idx) => {
-        return <li key={idx}>
-            {item.name} должен {item.debt}
-            <button type="button" onClick={deleteDebt} data-idx={idx}>Вернул</button>
-        </li >
+            [...prevList.slice(0, evt.target.value), ...prevList.slice(evt.target.value + 1)]
+        )
     }
 
     return <ul>
-        {debtorsArr.map((item, idx) => renderItem(item, idx))}
+        {debtorsArr.map((item, idx) => <DebtorItem key={idx} idx={idx} debtor={item} deleteDebt={deleteDebt} />)}
     </ul>
 }
