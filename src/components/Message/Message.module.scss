@@ -1,7 +1,11 @@
 .message {
-    color: aqua;
+    color: darkblue;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    margin: 0;
 
-    &__span {
-        color: lightcoral;
+    & span {
+        color: black;
+        font-style: italic;
     }
 }

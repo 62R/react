@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    border: 1px solid cornflowerblue;
+}
+
+.msgArea {
+    border: 1px solid cornflowerblue;
+    resize: none;
+}
+
+.btn {
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid cornflowerblue;
+}
