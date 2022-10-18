@@ -1,4 +1,4 @@
-import { Message } from '../Message/Message';
+import { Message } from '../Message';
 import style from './MessageList.module.scss';
 
 export const MessageList = ({ list }) => (

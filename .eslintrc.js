@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
+    jest: true,
   },
   extends: [
     'prettier',
@@ -10,6 +11,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -18,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'react-hooks', 'jest'],
+  plugins: ['react', 'prettier', 'react-hooks', 'jest', 'storybook'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -27,7 +29,7 @@ module.exports = {
       },
     ],
     'react/prop-types': 0,
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': 'off',
     quotes: ['warn', 'single'],
     semi: ['warn', 'always'],
     'react/react-in-jsx-scope': 'off',
