@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form render component with snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="form"
+  >
+    <label
+      for="name"
+    >
+      Имя:
+    </label>
+    <input
+      class="input"
+      id="name"
+      value=""
+    />
+    <label
+      for="msg"
+    >
+      Сообщение:
+    </label>
+    <textarea
+      class="msgArea"
+      id="msg"
+      rows="5"
+    />
+    <button
+      class="btn"
+      disabled=""
+    >
+      Отправить
+    </button>
+  </form>
+</DocumentFragment>
+`;

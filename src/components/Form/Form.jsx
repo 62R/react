@@ -1,40 +1,34 @@
 import { useState } from 'react';
 import style from './Form.module.scss';
 
-export const Form = ({ setList }) => {
+export const Form = ({ addMsg }) => {
   const [name, setName] = useState('');
   const [msg, setMsg] = useState('');
   const handleSubmit = (evt) => {
     evt.preventDefault();
     addMsg(name, msg);
-    const greetings = 'Hi ' + name;
-    const timeoutId = setTimeout(() => {
-      addMsg('Bot', greetings);
-      clearTimeout(timeoutId);
-    }, 5000);
     setMsg('');
-  };
-  const addMsg = (author, msg) => {
-    setList((prevList) => [...prevList, { author, msg }]);
   };
   return (
     <form onSubmit={handleSubmit} className={style.form}>
-      Имя:
+      <label htmlFor="name">Имя:</label>
       <input
         className={style.input}
         value={name}
         onInput={(evt) => setName(evt.target.value)}
-        name="name"
+        id="name"
       />
-      Сообщение:
+      <label htmlFor="msg">Сообщение:</label>
       <textarea
         className={style.msgArea}
         value={msg}
         onInput={(evt) => setMsg(evt.target.value)}
-        name="msg"
+        id="msg"
         rows="5"
       />
-      <button className={style.btn}> Добавить </button>
+      <button className={style.btn} disabled={!msg || !name}>
+        Отправить
+      </button>
     </form>
   );
 };
